@@ -47,7 +47,7 @@ void load_from_file(char *filename, int *arr, int size) {
 
 void print_array(int *arr, int size) {
   for (int i = 0; i < size; i += 1) {
-      printf("%08x\n", arr[i]);
+    printf("%08x\n", arr[i]);
   }
 }
 
@@ -96,9 +96,9 @@ int main(int argc, char** argv) {
 
 ```C
 struct data {
-    char c;
-    short s;
-    double d;
+  char c;
+  short s;
+  double d;
 };
 ```
 
