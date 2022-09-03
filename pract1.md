@@ -23,7 +23,7 @@ gcc -std=c99 -Wall -Wpedantic программа.c
 
 Используйте кнопку с черной стрелкой (находится внизу) для загрузки программы на C в JSLinux.
 
-Более удобно использовать [Docker](https://docs.docker.com/desktop/install/windows-install/), [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/install) или виртуальную машину (QEMU/VMWare/VirtualBox).
+Более удобно для проверки программ на Linux использовать [Docker](https://docs.docker.com/desktop/install/windows-install/), [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/install) или виртуальную машину (QEMU/VMWare/VirtualBox).
 
 ## Задача 1
 
