@@ -6,7 +6,7 @@
 
 Установка MinGW-w64 для Windows:
 
-1. С сайта https://github.com/niXman/mingw-builds-binaries/releases скачать архив x86_64-12.2.0-release-posix-seh-rt_v10-rev0.7z.
+1. С сайта https://github.com/niXman/mingw-builds-binaries/releases скачать архив x86_64-12.2.0-release-posix-seh-rt_v10-rev0.7z (или более новую версию).
 2. Распаковать архив в отдельную папку и запомнить к ней путь.
 3. В редакторе VSсode создать новый проект, добавить файл с программой на C.
 4. Создать в папке с проектом файл make.bat. Содержимое make.bat приведено ниже.
