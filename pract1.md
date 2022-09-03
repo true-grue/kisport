@@ -2,6 +2,29 @@
 
 П.Н. Советов, РТУ МИРЭА
 
+## Начальная настройка окружения
+
+Установка MinGW-w64 для Windows:
+
+1. С сайта https://github.com/niXman/mingw-builds-binaries/releases скачать архив x86_64-12.2.0-release-posix-seh-rt_v10-rev0.7z.
+2. Распаковать архив в отдельную папку и запомнить к ней путь.
+3. В редакторе VSсode создать новый проект, добавить файл с программой на C.
+4. Создать в папке с проектом файл make.bat. Содержимое make.bat приведено выше.
+5. Запустить терминал в VScode и проверить компиляцию с помощью make.bat.
+
+Содержимое make.bat:
+
+```
+PATH=путь к mingw64/bin
+gcc -std=c99 -Wall -Wpedantic программа.c
+```
+
+Для проверки работы программ в Linux можно использовать JSLinux: https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192
+
+Используйте кнопку с черной стрелкой (находится внизу) для загрузки программы на C в JSLinux.
+
+Более удобно использовать [Docker](https://docs.docker.com/desktop/install/windows-install/), [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/install) или виртуальную машину (QEMU/VMWare/VirtualBox).
+
 ## Задача 1
 
 Реализуйте функцию `print_data`, которая выведет на экран значения в том порядке байт, который принят в вашей системе.
