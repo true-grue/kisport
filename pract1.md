@@ -23,7 +23,11 @@ gcc -std=c99 -Wall -Wpedantic программа.c
 
 Используйте кнопку с черной стрелкой (находится внизу) для загрузки программы на C в JSLinux.
 
-Более удобно для проверки программ на Linux использовать [Docker](https://docs.docker.com/desktop/install/windows-install/), [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/install) или виртуальную машину (QEMU/VMWare/VirtualBox).
+Более удобно для проверки программ в Linux использовать:
+
+* [Docker](https://docs.docker.com/desktop/install/windows-install/),
+* [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/install),
+* виртуальную машину (QEMU/VMWare/VirtualBox).
 
 ## Задача 1
 
@@ -139,7 +143,7 @@ d: 8
 
 ## Задача 5
 
-Замените make-bat на makefile-скрипт для компиляции кода задач. Вам, возможно, понадобится установить утилиту Make (версия для [Windows](http://gnuwin32.sourceforge.net/packages/make.htm)).
+Замените make.bat на makefile-скрипт для компиляции кода задач. Вам, возможно, понадобится установить утилиту Make (версия для [Windows](http://gnuwin32.sourceforge.net/packages/make.htm)).
 
 ## Задача 6
 
@@ -148,10 +152,12 @@ d: 8
 Проверьте код задач с помощью следующих ключей:
 
 ```
--q --enable=all --inconclusive
+-q --std=c99 --enable=all --inconclusive --suppress=missingIncludeSystem
 ```
 
 Постарайтесь исправить найденные с помощью cppcheck проблемы.
+
+Подключите второй статический анализатор – [Clang Static Analyzer](https://clang-analyzer.llvm.org/). Сравните качество работы этого анализатора с cppcheck.
 
 ## Задача 7
 
