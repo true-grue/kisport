@@ -12,15 +12,15 @@
 
 Пример исходного текста (подсчет суммы вводимых чисел):
 
-```
+```python
 # print sum of input numbers (terminated by zero)
     ld zero # initialize sum to zero
     st sum
-loop get # read a number
+loop get    # read a number
     jz done # no more input if number is zero
     add sum # add in accumulated sum
-    st sum # store new value back in sum
-    j loop # go back and read another number
+    st sum  # store new value back in sum
+    j loop  # go back and read another number
 done ld sum # print sum
     put
     halt
@@ -30,13 +30,13 @@ sum const
 
 Таблица символов:
 
-```
+```python
 {'loop': 2, 'done': 7, 'zero': 10, 'sum': 11}
 ```
 
 Промежуточный код:
 
-```
+```python
 ('ld', 'zero')
 ('st', 'sum')
 ('get', 0)
@@ -55,7 +55,7 @@ sum const
 
 Реализуйте второй проход ассемблера с заменой меток их значениями из таблицы символов.
 
-```
+```python
 0: ('ld', 10)
 1: ('st', 11)
 2: ('get', 0)
@@ -76,13 +76,13 @@ sum const
 
 Коды операций:
 
-```
+```python
 {'const': 0, 'get': 1, 'put': 2, 'ld': 3, 'st': 4, 'add': 5, 'sub': 6, 'jpos': 7, 'jz': 8, 'j': 9, 'halt': 10}
 ```
 
 Результат кодирования:
 
-```
+```python
 [3010, 4011, 1000, 8007, 5011, 4011, 9002, 3011, 2000, 10000, 0, 0]
 ```
 
