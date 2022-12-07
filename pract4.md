@@ -115,12 +115,12 @@ stack = [0] * 16
 sp = 0
 
 def push(x):
-    global stack, sp
+    global sp
     stack[sp] = x
     sp += 1
 
 def pop():
-    global stack, sp
+    global sp
     sp -= 1
     return stack[sp]
 
