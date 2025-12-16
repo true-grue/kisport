@@ -3,8 +3,6 @@
 - [Слайды и материалы лекций](./slides)
 - [Сборники практических задач](./pract)
 
-## Начало работы
-
 Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
 
 ### Сборка книги на ОС Windows
