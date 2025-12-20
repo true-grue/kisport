@@ -19,12 +19,10 @@ EXAM = md/exam.md \
 	md/exam_to_bytes.md \
 	md/exam_from_bytes.md
 
-CONC = md/conclusion.md
 BIB = md/bibliography.md
 
 MD = $(INTRO) \
 	$(BASICS) \
 	$(DOOM) \
 	$(EXAM) \
-	$(CONC) \
 	$(BIB)
