@@ -10,10 +10,11 @@ DOOM = md/c_doom.md \
 	md/c_doom_linux_gui.md \
 	md/c_doom_windows_gui.md \
 	md/c_doom_web_gui.md \
-	md/c_doom_linux_tui.md \
-	md/c_doom_windows_tui.md \
-	md/c_doom_xplat.md \
-	md/c_doom_excercises.md
+	md/c_port_doom.md \
+	md/c_port_doom_linux_tui.md \
+	md/c_port_doom_windows_tui.md \
+	md/c_port_doom_xplat.md \
+	md/c_port_doom_excercises.md
 
 EXAM = md/exam.md \
 	md/exam_to_bytes.md \
