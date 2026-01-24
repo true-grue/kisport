@@ -1,10 +1,11 @@
-import typing
+from typing import NamedTuple
+from iuliia import WIKIPEDIA as wiki
+
 import os
 import sys
-import iuliia
 
 
-class Section(typing.NamedTuple):
+class Section(NamedTuple):
     title: str
     content: list
     tree: bool = False
@@ -16,9 +17,7 @@ def make_title(line):
     return line.strip()
 
 
-def make_sections(md):
-    with open(md, 'r', encoding='utf-8') as file:
-        lines = file.readlines()
+def make_sections(lines):
     sections = []
     section = None
     in_code = False
@@ -38,7 +37,9 @@ def make_sections(md):
 
 
 def get_subsections(section):
-    return [s for s in section.content if isinstance(s, Section)]
+    return [subsection
+            for subsection in section.content
+            if isinstance(subsection, Section)]
 
 
 def cleanup_sections(sections):
@@ -49,20 +50,18 @@ def cleanup_sections(sections):
 
 
 def file_name(title):
-    title = ''.join(
+    name = ''.join(
         sym if sym.isalpha() else
         '-' if sym.isspace() else
-        '' for sym in title)
-    title = title.strip('-')
-    title = iuliia.WIKIPEDIA.translate(title)
-    return title + '.md'
+        '' for sym in title).strip('-')
+    return f'{wiki.translate(name)}.md'
 
 
 def dump_file(sub, dirname):
     fname = file_name(sub.title)
     path = os.path.join(dirname, fname)
-    with open(path, 'w', encoding='utf-8') as file:
-        file.writelines(sub.content)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.writelines(sub.content)
     return fname
 
 
@@ -77,16 +76,16 @@ def dump_section(section, dirname):
 def dump_sections(sections, dirname):
     body = ['Summary\n', '\n']
     for sub in sections:
-        match sub.tree:
-            case True:
-                body += dump_section(sub, dirname)
-            case False:
-                file = dump_file(sub, dirname)
-                body.append(f'- [{sub.title}]({file})\n')
+        if sub.tree:
+            body += dump_section(sub, dirname)
+        else:
+            file = dump_file(sub, dirname)
+            body.append(f'- [{sub.title}]({file})\n')
     dump_file(Section('SUMMARY', body), dirname)
 
 
-book = sys.argv[1]
-sections = make_sections(book)
-sections = cleanup_sections(sections)
-dump_sections(sections, os.path.dirname(book))
+src = sys.argv[1]
+out = os.path.dirname(src)
+with open(src, 'r', encoding='utf-8') as f:
+    sections = make_sections(f.readlines())
+dump_sections(cleanup_sections(sections), out)
